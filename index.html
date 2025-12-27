@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>Radios</title>
+		<link rel="stylesheet" type="text/css" href="radios.css">
+	</head>
+	<body>
+		<select id="selector" onchange="tune(value)">
+			<option value="https://server6.globalhostla.com:9308/stream">Cardenales 92.1FM</option>
+			<option value="https://server6.globalhostla.com:9308/stream">Cardenales 92.1FM</option>
+			<option value="https://radiostream.interven.ca/listen/minuto790am/radio.mp3">Radio Minuto 790AM</option>
+			<option value="https://radiostream.interven.ca/listen/minuto106fm/radio.mp3">Radio Minuto 106.1FM</option>
+			<option value="http://player.lorini.net/radioestadio/">Radio Estadio</option>
+			<option value="http://radioestadio.com.ve">Radio Estadio2</option>
+			<option value="https://acp2.lorini.net:30008/radioestadio.aac">Radio Estadio3</option>
+			<option value="http://aler.org:8000/barquisimeto.aac">Fe y Alegría</option>
+			<option value="https://sonic01.instainternet.com/8290/stream">Rumbera Network</option>
+			<option value="https://stream.zeno.fm/2ca9cavana0uv">Lider</option>
+			<option value="https://server6.globalhostla.com:9356/stream">Fama</option>
+			<option value="http://ur58.lorini.net:35000/LAMEGA1033FM">La Mega</option>
+			<option value="https://stream.zeno.fm/a9m8xdf1fs8uv">Tu Voz Estereo</option>
+			<option value="https://server6.globalhostla.com:9016/stream">Otra</option>
+		</select>
+		<br>
+		<audio id="miaudio" controls><source src="https://server6.globalhostla.com:9308/stream" type="audio/mpeg"></audio>
+		<p></p>
+		<!--
+		<audio id="miaudio" controls><source src="http://rnv.lorini.net:2010/RadioMinuto790" type="audio/mpeg"></audio>
+		<audio id="miaudio" controls><source id="x" src="http://player.lorini.net/radioestadio/" type="audio/mpeg"></audio>
+		<video id="mivideo" controls><source src="https://pluto.tv/es/live-tv/pluto-tv-viajes"></video>
+		-->
+		<label>Delta Streaming: <span id="delta">0:00</span></label>
+		<br>
+		<button class="t" onclick="seek(-30)">-30</button>
+		<button class="t" onclick="seek(-5)">-5</button>
+		<button class="t" onclick="seek(-1)">-1</button>
+		<button class="t" onclick="seek(-0.5)">-½</button>
+		<button class="t" onclick="seek(-0.25)">-¼</button>
+		<button class="t" onclick="seek(0.25)">+¼</button>
+		<button class="t" onclick="seek(0.5)">+½</button>
+		<button class="t" onclick="seek(1)">+1</button>
+		<button class="t" onclick="seek(5)">+5</button>
+		<button class="t" onclick="seek(30)">+30</button>
+		<br>
+		<span>⛣ </span>
+		<button class="t" id="crono" onclick="cronometro()">▶</button>
+		<span> </span></span><span id="cronom">0:00</span>
+
+		<script src="radios.js"></script>
+
+	</body>
+</html>
