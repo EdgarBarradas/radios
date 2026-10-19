@@ -54,7 +54,7 @@ function formato(xs){
 	return signo+dias+horas+minutos+segundos;
 }
 
-function tune(){
+function tune(source){
 
         const requestWakeLock = async () => {  // rutina para evitar boqueo de pantalla
             try {
@@ -62,8 +62,14 @@ function tune(){
 	       } catch (err) {}
         }
 
-	x=document.getElementById("selector").value;
-	document.getElementById("miaudio").src=x;
+	const audio=document.getElementById("miaudio");
+	const wasPlaying=!audio.paused;
+	audio.pause();
+	audio.src=source;
+	audio.load();
+	if (wasPlaying) {
+		audio.play().catch((err) => console.error("No se pudo reanudar la reproducción:", err));
+	}
 	delta=0;
 	document.getElementById("delta").innerText=formato(0);
 }
